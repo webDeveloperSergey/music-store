@@ -1,14 +1,30 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotImplementedException } from '@nestjs/common';
+import { CreateAuthorDTO, ReadAuthorDTO, ReadManyQueryAuthorDTO } from './dto';
 
 @Injectable()
 export class AuthorsService {
-  getMany() {}
+  getMany(query: ReadManyQueryAuthorDTO): Promise<ReadAuthorDTO> {
+    throw new NotImplementedException(
+      `Method not implemented ${JSON.stringify(query)}`,
+    );
+  }
 
-  getOne() {}
+  getOne(authorId: string): Promise<ReadAuthorDTO> {
+    throw new NotImplementedException(`Method not implemented ${authorId}`);
+  }
 
-  create() {}
+  create(data: CreateAuthorDTO): Promise<string> {
+    throw new NotImplementedException(
+      `Method not implemented ${JSON.stringify(data)}`,
+    );
+  }
 
-  update() {}
+  update(authorId: string, data: CreateAuthorDTO): Promise<ReadAuthorDTO> {
+    console.log(data);
+    throw new NotImplementedException(`Method not implemented ${authorId}`);
+  }
 
-  delete() {}
+  delete(authorId: string): Promise<void> {
+    throw new NotImplementedException(`Method not implemented ${authorId}`);
+  }
 }
