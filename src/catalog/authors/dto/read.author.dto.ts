@@ -12,6 +12,8 @@ export class ReadAuthorDTO {
   dateOfBirth: Date;
 
   dateOfDeath: Date | undefined | null;
+}
 
+export class ReadAuthorWithAlbumsDTO extends ReadAuthorDTO {
   albumTotal: number;
 }
