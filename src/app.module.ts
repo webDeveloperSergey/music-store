@@ -4,6 +4,10 @@ import { CatalogModule } from './catalog/catalog.module';
 import { PrismaModule } from './prisma';
 
 @Module({
-  imports: [ConfigModule.forRoot(), PrismaModule, CatalogModule],
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
+    PrismaModule,
+    CatalogModule,
+  ],
 })
 export class AppModule {}
